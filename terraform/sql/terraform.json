@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "alhona-exercise",
+  "private_key_id": "12202bfb48d717c384b37583b1bdc418700bba2f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCn5eJVok/r+liF\n4QpPC4oRJln4VbwttLMxIivu3gz6pUbDGSsMj0kVveksO3YQpNu85/zMM6kr8itM\n0Cu7jRDNhK5vMBIhqq2j8SvtXtM5zT3xGeqJ0YZIBjJE2TnkY+yeSqanMIzGMa87\nprIvtiAefTXOY3Q40HN6wr4/H2BUgOvcw5ldT/66w3KVYQ5NxqOeRJB3ocZUXHa9\ndK+KWQ32HnRWRsUxwSIVYWJ1E0cmKappyNYJ6SRLts+9QOlGwAbOXc2Mw5dITFy7\nalOf2Yoeh3O0+leV01sS24MBZXsj6qFkC+IuQMmUDO7v9YNpTl2b9JMEIKasl4kr\n90Ybf4crAgMBAAECggEABqbkdzkViodiH3fBhU0zPKe009JtwK/Sk6VDcVTJ1dpb\nedpS6s34esyJ4u8+J72oWQ0l5l87mhqfnYz31pfprQLPOGeCqGPPOloRP/fMTZN0\nm0tIEArFk6/vKOwkT4in9MOHY8NYKHgKdcYOdDZ2gk66pYEqNyAHGzuA9xZCpkZe\nzDkAyO6Eiiclt9vNR7/Yj9bi6490gIjiFFKUc/mLJmJY/1FPWMZRnKdZoxp7fYm7\nyDbz7cySWrojgD20chJY1xt59R1jUlFX/Y7aflFXWtwTUgspUcjF9EsLqTkIta0U\nna8UvDaw5gWQhfzNatgppjeIhb9pdW+F097OFXp2gQKBgQDmv7pFkWhZcSa2fxzi\nawmtmpuTwhVWmh6Qntk7iRhMXEk8/+C8Ualns/J0SHzcSrVjI0WBsH3kN//DZ/Mj\nOzYMHj7EiV1vP53tQmWX8WhWX4Z8dOxkyj2ZVl3K5meTVn5s2o2ajx/EvullMZ6Z\n+RzWVR2bKR2AudhNo63yUkr4gQKBgQC6RW4wQnvijAvc97M5Y1eGrt/Hq7OSe6VQ\nIy0ZV5KTwv8IJNMc7lK/df50dtE4OiHF04doMPIpUlK0vnvMecmuCRJCx9Bl4avK\n1HrkrgPLdn6bQAHJGGF6cjNI9pdfxVvPTdMHjjoy2ukEljqTTTvhpnVJdr+XP4Ek\nObGYYS8JqwKBgQCZNGk/sWigIhF7D/CkoD7fxgxP0YgLZO6wRNekwMSiRo/V8WpM\nfsfEc+ShslM8jFnchdmrXvxnH4swOX9kP/cFmrtAEJg5ufpoQjJj7MPCvU/0qEkg\nLmsxuPczNUFFwSLVsVJdcXO9VKhwKL7OKmksIX0zvNu60Sm9etSOVHc0gQKBgHN1\nvAJgA4h+xI+4XjiRUlyiowWScaG30NWmqDrQJIRA13KF2PJS66nQCuTIDZGrvulv\n37v+suxYIfn1JKmvSAr/hnksgAnW43S7Vl3PW3zPu1SiTTkISsvqY82zREtR+0G5\nfLhvObXyKYP1VuOdeSO62XKrD8FB1NvOgz3v54c3AoGBANfu3a7op3hXvYyoOcbb\nyuDPOwa6YgCE4LmXEM/chjd5DciWMVKdA7q8PVYliuVZY4P9EfmLAnYf6k76ewzN\nzLj1xljS5LtmeFYF330wteo5wNuKNfheabIuf70tZHRLq9hBPsd11zdS5qNjCo7f\n6qWieQwfgChsMqA2H3OZQxb9\n-----END PRIVATE KEY-----\n",
+  "client_email": "alhona-exercise@appspot.gserviceaccount.com",
+  "client_id": "117278928943186066406",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/alhona-exercise%40appspot.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,3 +1,5 @@
 __pycache__
 .git
 .gitignore
+terraform/sql/terraform.tfstate
+terraform/sql/terraform.tfstate.backup
