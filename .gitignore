@@ -3,3 +3,5 @@ __pycache__
 .gitignore
 terraform/sql/terraform.tfstate
 terraform/sql/terraform.tfstate.backup
+terraform/sql/terraform.json
+flask_rest/database.ini

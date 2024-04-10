@@ -1,5 +1,4 @@
 psycopg2-binary
-transformers
-torch
-flask
+Flask
 gunicorn
+Werkzeug
