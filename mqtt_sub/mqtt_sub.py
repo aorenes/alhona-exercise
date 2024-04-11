@@ -14,8 +14,7 @@ broker = 'broker.emqx.io' # there are another public MQTT brokers out there!
 port = 1883               # You can use http://mqttx.app client to test it
 
 my_id = str(uuid.uuid4()).split('-')[0]  # warn: the topic will change on each run!
-#topic = f"alhona/fakefactory/{my_id}"
-topic = f"alhona/fakefactory/fixed"
+topic = f"alhona/fakefactory/{my_id}"
 
 # Generate a Client ID with the subscribe prefix.
 client_id = f'subscribe-{random.randint(0, 100)}'  # Client ids MUST be unique!
@@ -51,21 +50,13 @@ def connect(config):
 def subscribe(_client: mqtt_client):
     def on_message(client, userdata, msg):
         print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
-        # TODO ====> Process received keys <====
-        # - Store them in a Python dictionary?
-        # - Store them in an external database?
-        #
-        # How will you access them? HTTP/DB shell?
-        insertDB(msg.payload.decode())
+        processMessage(msg.payload.decode())
         
-
     print(f"Subscribed to topic {topic}\n")
     _client.subscribe(topic)
     _client.on_message = on_message
 
-def insertDB(message):
-    
-    #insert = "INSERT INTO payload VALUES('1',"+signal+","+ +");"
+def processMessage(message):
 
     key = re.split("\"*\"", message)
     regex = "^[A-Za-z].*[0-9]$"
@@ -73,37 +64,45 @@ def insertDB(message):
 
     for signal in key:
         if re.match(regex, signal):
-            count = getDB(signal)
-            if (count > 0):
-                print("Haberlas hay: "+ str(count))
-            else:
-                print("No hay") 
-
-        #
-        #    if y in dictionary:
-        #        value = int(dictionary[y])
-        #        value += 1
-        #        dictionary.update({y: value})
-        #    else:
-        #        dictionary.update({y: 1})
+            insertDB(signal)
+            #getDBFull(signal)
 
 
-def getDB(signal):
+def insertDB(signal):
     """ Retrieve data from the vendors table """
     config  = load_config()
     try:
         with psycopg2.connect(**config) as conn:
             with conn.cursor() as cur:
                 cur.execute("SELECT concurrence FROM payload WHERE signal = '"+signal+"'")
-                print("The number of parts: ", cur.rowcount)
                 row = cur.fetchone()
+                if row is not None:
+                    concurrence = int(row[0])
+                    concurrence += 1
+                    cur.execute("UPDATE payload SET concurrence = "+str(concurrence)+" WHERE signal = '"+signal+"';")
+                else:
+                    concurrence = 1
+                    cur.execute("INSERT INTO payload VALUES(default,'"+signal+"',"+str(concurrence)+");")
 
-                while row is not None:
-                    print(row)
-                    row = cur.fetchone()
-        return cur.rowcount
     except (Exception, psycopg2.DatabaseError) as error:
         print(error) 
+
+# Shows Postgres Table Payload for debugging purposes
+
+#def getDBFull(signal):
+#    config  = load_config()
+#    try:
+#        with psycopg2.connect(**config) as conn:
+#            with conn.cursor() as cur:
+#                cur.execute("SELECT * FROM payload")
+#                row = cur.fetchone()
+#                print ("\n")
+#                while row is not None:
+#                    print (row)
+#                    row = cur.fetchone()
+#
+#    except (Exception, psycopg2.DatabaseError) as error:
+#        print(error)
 
 def run():
     client = connect_mqtt()
@@ -113,4 +112,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-
